@@ -1,8 +1,8 @@
 +++
 title = "Scraping financial discloure reports from the House of Clerks website with Python - Part 1: Downloading the reports"
 description = "Part 1 of a series on acquring and scanning House of Clerks financal disclosures using Python. Covers the downloading of the files using BeautifulSoup and requests."
-date = 2022-01-09
-updated = 2022-01-09
+date = 2023-05-25
+updated = 2023-05-26
 draft = false
 
 [taxonomies]
@@ -17,7 +17,7 @@ comments = true
 
 As per the [Ethics in Government Act of 1978](https://en.wikipedia.org/wiki/Ethics_in_Government_Act) members of public office in the US are required to fill in forms disclosing most forms of income, including trading, property and gifts. These forms are publically available on the [Office of the Clerk's](https://disclosures-clerk.house.gov/PublicDisclosure/FinancialDisclosure#Search) website.
 
-The end goal of this series of blogs is to have code that will automatically download these forms and scan the contents into a tabular form. This data can be used to get insight into the income types of US politicians - something that could be interesting would be to do some backtesting based on their investment portfolios.
+The end goal of this series of blogs is to have code that will automatically download these forms and scan the contents into a tabular form. This data can be used to get insight into the income types of US politicians - something that could be interesting would be to do some backtesting based on their investment strategies.
 
 # Listing & downloading financial disclosures
 

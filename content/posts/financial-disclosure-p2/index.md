@@ -1,8 +1,8 @@
 +++
 title = "Scraping financial discloure reports from the House of Clerks website with Python - Part 2: Contour detection and table preprocessing using opencv"
 description = "Part 2 of a series on acquring and scanning House of Clerks financal disclosures using Python. Covers pulling the table from the PDFs using contour detection and splitting it out into rows using morphological operations."
-date = 2022-01-10
-updated = 2022-01-10
+date = 2023-05-26
+updated = 2023-05-26
 draft = false
 
 [taxonomies]
@@ -47,7 +47,7 @@ The form we are working with is shown below:
 
 ![](gaetzform.png)
 
-All financial disclosure forms take like this, with multiple pages of tables with surrounding text we arent interested in (we can get alot of this information from the HTML parsing we did in the previous blog).
+All financial disclosure take the same form as above, with multiple pages of tables with surrounding text we arent interested in (we can get alot of this information from the HTML parsing we did in the previous blog).
 
 To pull the tables out of the forms we will use the contour detection capabilites of opencv. Contour detection is a way of finding the edges of objects in an image, which is a fundamental part of computer vision which is often interested in identifying objects of interest from within a larger image. 
 
