@@ -1,6 +1,6 @@
 +++
-title = "Scraping financial discloure reports from the House of Clerks website with Python - Part 2: Contour detection and table preprocessing using opencv"
-description = "Part 2 of a series on acquring and scanning House of Clerks financal disclosures using Python. Covers pulling the table from the PDFs using contour detection and splitting it out into rows using morphological operations."
+title = "Scraping financial disclosure reports from the House of Clerks website with Python - Part 2: Contour detection and table preprocessing using opencv"
+description = "Part 2 of a series on acquiring and scanning House of Clerks financal disclosures using Python. Covers pulling the table from the PDFs using contour detection and splitting it out into rows using morphological operations."
 date = 2023-05-26
 updated = 2023-05-26
 draft = false
@@ -20,7 +20,7 @@ In the [previous](@/posts/financial-disclosure-p1/index.md) article I covered ho
 
 # Converting the image to BGR colour space
 
-If you followed along the last blog (or by grabbing the code from the repo [here]("https://github.com/jamiegl/financial-disclosure-scraper")) you can run the below to load the image into a format (it'll be an a bunch of numpy arrays) ready for opencv to operate on.
+If you followed along the last article (or by grabbing the code from the repo [here]("https://github.com/jamiegl/financial-disclosure-scraper")) you can run the below to load the image into a format (it'll be an a bunch of numpy arrays) ready for opencv to operate on.
 
 ```py
 import mod.download as dl
@@ -33,9 +33,9 @@ first_page = first_pdf[0]
 form_opencv = cv2.cvtColor(np.array(first_page), cv2.COLOR_RGB2BGR)
 ```
 
-Everything apart from the last line is explained in the previous blog - this line translates our image to the BGR colour space, which is needed when working with opencv (for purely [historical]("https://stackoverflow.com/questions/14556545/why-opencv-using-bgr-colour-space-instead-of-rgb") reasons).
+Everything apart from the last line is explained in the previous article - this line translates our image to the BGR colour space, which is needed when working with opencv (for purely [historical]("https://stackoverflow.com/questions/14556545/why-opencv-using-bgr-colour-space-instead-of-rgb") reasons).
 
-If you didn't follow the last blog and just want to start from here, save the form from the next section and open it with:
+If you didn't follow the last article and just want to start from here, save the form from the next section and open it with:
 
 ```py
 form_opencv = cv2.imread("path/to/image.png", cv2.COLOR_RGB2BGR)
@@ -47,7 +47,7 @@ The form we are working with is shown below:
 
 ![](gaetzform.png)
 
-All financial disclosure take the same form as above, with multiple pages of tables with surrounding text we arent interested in (we can get alot of this information from the HTML parsing we did in the previous blog).
+All financial disclosure take the same form as above, with multiple pages of tables with surrounding text we arent interested in (we can get alot of this surrounding information from the HTML parsing we did in the previous article).
 
 To pull the tables out of the forms we will use the contour detection capabilites of opencv. Contour detection is a way of finding the edges of objects in an image, which is a fundamental part of computer vision which is often interested in identifying objects of interest from within a larger image. 
 
@@ -172,4 +172,4 @@ Since we ordered by y coordinate earlier we can get the second row by looking at
   <figcaption>Second row</figcaption>
 </figure>
 
-We are now ready to to OCR our rows - the next blog will cover using `tesseract` and some clustering to achieve that.
+We are now ready to extract the text from our rows using OCR - we will do this using `tesseract` and some clustering in the [next](@/posts/financial-disclosure-p3/index.md) article.
