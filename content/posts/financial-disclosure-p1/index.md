@@ -1,8 +1,8 @@
 +++
 title = "Scraping financial disclosure reports from the House of Clerks website with Python - Part 1: Downloading the reports"
-description = "Part 1 of a series on acquring and scanning House of Clerks financal disclosures using Python. Covers the downloading of the files using BeautifulSoup and requests."
+description = "Part 1 of a series on acquring and scanning House of Clerks financal disclosures using Python. Covers the downloading of the disclosure PDFs using BeautifulSoup and requests."
 date = 2023-05-25
-updated = 2023-05-26
+updated = 2023-05-25
 draft = false
 
 [taxonomies]

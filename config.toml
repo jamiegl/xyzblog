@@ -3,7 +3,7 @@ base_url = "https://jamieoreillyg.netlify.app"
 theme = "DeepThought"
 # The site title and description; used in feeds by default.
 title = "jamieoreillyg"
-description = "Blogs, code snippets and whatever else to stop me from forgetting things."
+description = "Articles, code snippets and whatever else to stop me from forgetting things."
 
 # The default language; used in feeds.
 default_language = "en"
