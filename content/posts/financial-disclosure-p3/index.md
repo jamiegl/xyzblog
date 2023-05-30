@@ -200,7 +200,7 @@ The print statements should so something like:
 
 Which is useful for playing with different hyperparameters - we know there should only be 5 clusters for this row.
 
-# Clusetring - post processing
+# Clustering - post processing
 Now we need to work our way backwards from the cluster/index representation and get our words from the `row_text` object we derived from tesseract.
 
 ```py
