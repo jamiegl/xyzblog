@@ -20,7 +20,7 @@ In the [previous](@/posts/financial-disclosure-p1/index.md) article I covered ho
 
 # Converting the image to BGR colour space
 
-If you followed along the last article (or by grabbing the code from the repo [here]("https://github.com/jamiegl/financial-disclosure-scraper")) you can run the below to load the image into a format (it'll be an a bunch of numpy arrays) ready for opencv to operate on.
+If you followed along the last article (or by grabbing the code from the repo [here](https://github.com/jamiegl/financial-disclosure-scraper)) you can run the below to load the image into a format (it'll be an a bunch of numpy arrays) ready for opencv to operate on.
 
 ```py
 import mod.download as dl
@@ -33,7 +33,7 @@ first_page = first_pdf[0]
 form_opencv = cv2.cvtColor(np.array(first_page), cv2.COLOR_RGB2BGR)
 ```
 
-Everything apart from the last line is explained in the previous article - this line translates our image to the BGR colour space, which is needed when working with opencv (for purely [historical]("https://stackoverflow.com/questions/14556545/why-opencv-using-bgr-colour-space-instead-of-rgb") reasons).
+Everything apart from the last line is explained in the previous article - this line translates our image to the BGR colour space, which is needed when working with opencv (for purely [historical](https://stackoverflow.com/questions/14556545/why-opencv-using-bgr-colour-space-instead-of-rgb) reasons).
 
 If you didn't follow the last article and just want to start from here, save the form from the next section and open it with:
 
@@ -57,7 +57,7 @@ To begin we need to do a little image preprocessing to make life easier for the 
 def si(array, path="../outputs/tmp/temp.png"):
     Image.fromarray(array).save(path)
 ```
-I normally have vscode/[ranger]("https://github.com/ranger/ranger") open on another screen with the file `../outputs/tmp/temp.png` open. Whenever I want to an see image looks like I just run `si(<my_image>)` and inspect the result on my other screen. 
+I normally have vscode/[ranger](https://github.com/ranger/ranger) open on another screen with the file `../outputs/tmp/temp.png` open. Whenever I want to an see image looks like I just run `si(<my_image>)` and inspect the result on my other screen. 
 
 Lets begin preprocessing. We want to make the edges of our table very "obvious" - there should be alot of contrast within our image. For us this is very easy - our image is grey, white and black so we'll just apply a threshold function to make it black and white.
 
