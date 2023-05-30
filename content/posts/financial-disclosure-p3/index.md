@@ -14,7 +14,7 @@ comments = true
 toc = true
 +++
 
-*I want to give a lot of credit to [this article](https://pyimagesearch.com/2022/02/28/multi-column-table-ocr/) from pyimagesearch for giving me alot of inspiration on how to tackle the problems presented in the article. It's a fantastic site worth checking out if you are thinking of getting into computer vision*
+*I want to give credit to [this article](https://pyimagesearch.com/2022/02/28/multi-column-table-ocr/) from pyimagesearch for giving me alot of inspiration on how to tackle the problems presented in the article. It's a fantastic site worth checking out if you are thinking of getting into computer vision*
 
 # Introduction
 
