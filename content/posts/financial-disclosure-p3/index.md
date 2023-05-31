@@ -13,10 +13,9 @@ math_auto_render = true
 comments = true
 toc = true
 +++
-
-*I want to give credit to [this article](https://pyimagesearch.com/2022/02/28/multi-column-table-ocr/) from pyimagesearch for giving me alot of inspiration on how to tackle the problems presented in the article. It's a fantastic site worth checking out if you are thinking of getting into computer vision*
-
 # Introduction
+
+**I want to give credit to [this article](https://pyimagesearch.com/2022/02/28/multi-column-table-ocr/) from pyimagesearch for giving me a lot of inspiration on how to tackle the problems presented in the article. It's a fantastic site worth checking out if you are thinking of getting into computer vision**
 
 In the [previous](@/posts/financial-disclosure-p2/index.md) article I covered how to use contour detection and morphological operations (using `opencv`) to extract tables from the financial disclosure forms ready for text extraction.
 
@@ -80,7 +79,7 @@ Calling it on the first row like `filter_coords(row_text[0][1], 2)` will return 
  (6, (149, 20, 53, 17))...
  (7, (209, 29, 8, 2))]
  ```
- We now have a list of bounding boxes and the words the indexes of the words the relate to. We are almost ready to begin column clustering.
+ We now have a list of bounding boxes and the words the indexes of the words they relate to. We are almost ready to begin column clustering.
 
  # Preprocessing for clustering - adding data points
 

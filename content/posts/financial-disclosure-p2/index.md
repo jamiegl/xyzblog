@@ -14,9 +14,9 @@ comments = true
 toc = true
 +++
 
-*I want to give credit to [this article](https://pyimagesearch.com/2022/02/28/multi-column-table-ocr/) from pyimagesearch for giving me alot of inspiration on how to tackle the problems presented in the article. It's a fantastic site worth checking out if you are thinking of getting into computer vision*
-
 # Introduction
+
+**I want to give credit to [this article](https://pyimagesearch.com/2022/02/28/multi-column-table-ocr/) from pyimagesearch for giving me a lot of inspiration on how to tackle the problems presented in the article. It's a fantastic site worth checking out if you are thinking of getting into computer vision**
 
 In the [previous](@/posts/financial-disclosure-p1/index.md) article I covered how to automate the downloading of financial disclosure reports from the US House of Clerks website. We are now doing to some preprocessing on these forms to get them ready for text extraction and clustering, which is how we're going to parse the forms into tabular dataset.
 
