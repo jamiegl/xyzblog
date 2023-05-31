@@ -139,7 +139,7 @@ The images should be like the one shown earlier, with a row from the table and t
 
 # Clustering - model training
 
-We are now able to train a clusteing model on our enriched dataset. As discussed earlier we added data points in such a way to support single-linkage hierarchal clustering. Using sklearn such a model can be initialized by (docs [here](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html)):
+We are now able to train a clustering model on our enriched dataset. As discussed earlier we added data points in such a way to support single-linkage hierarchal clustering. Using sklearn such a model can be initialized by (docs [here](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html)):
 ```py
 from sklearn.cluster import AgglomerativeClustering
 
