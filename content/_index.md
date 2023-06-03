@@ -1,6 +1,6 @@
 +++
 title = "Jamie O'Reilly-Gall"
-description = "Just because you can do something low code doesn't mean you should"
+description = "Cool kids don't use notebooks"
 +++
 <p></p>
 <p></p>
