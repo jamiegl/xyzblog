@@ -1,5 +1,5 @@
 # The base URL of the site; the only required configuration variable.
-base_url = "http://jamieoreilly.xyz"
+base_url = "https://jamieoreilly.xyz"
 theme = "DeepThought"
 # The site title and description; used in feeds by default.
 title = "jamieoreilly.xyz"
