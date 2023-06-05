@@ -1,6 +1,5 @@
 +++
 title = "Jamie O'Reilly-Gall"
-description = "--------------------------------------"
 +++
 <p></p>
 <p></p>
