@@ -1,5 +1,5 @@
 # The base URL of the site; the only required configuration variable.
-base_url = "https://jamieoreilly.xyz"
+base_url = "https://deploy-preview-1--jamieoreillyg.netlify.app/"
 theme = "DeepThought"
 # The site title and description; used in feeds by default.
 title = "jamieoreilly.xyz"
