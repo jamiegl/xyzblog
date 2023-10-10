@@ -32,14 +32,14 @@ The final announcment, and the one that caught my eye, is the fact that Copilot 
 **As a disclaimer, I am sorely lacking in understanding of quantum computing as it is applied to chemistry. If that reflects in this post, apologies.**
 
 # Problems with quantum computing
-The overarching issue with quantum computers is mainly one of scale caused by underlying phenomena known as decoherance. I'm going to be honest, I've heard decohernce described in quite a few different ways - I think of it as noise that causes the qubits that perform your computing to become error-prone, and ultimately useless if exposed for too long without correction. Qubits are very sensitive to this noise which makes very hard to scale the number of qubits in your computer due to issues like cross talk and operational fidelity (whenever I perform an operation on a qubit, I introduce **more** noise - we have more to worry about than just environmental noise!).
+The overarching issue with quantum computers is mainly one of scale caused by underlying phenomena known as decoherance. You can think of decoherence as noise that causes the qubits that perform your computing to become error-prone, and ultimately useless if exposed for too long without correction. Qubits are very sensitive to this noise which makes very hard to scale the number of qubits in your computer due to issues like cross talk and operational fidelity (whenever I perform an operation on a qubit, I introduce noise - we have more to worry about than just environmental noise!).
 
 The main avenue to combating decoherence is through novel materials such as superconductors which have intrinsic properties which protect states (qubits) encoded within them. The topological qubit which Microsoft just generated is another example of an qubit generated in such a way that it has protection against noise. These materials are on the bleeding edge of modern physics and as such are very expensive to produce and hard to maintain (superconductor based quantum computers operate near absolute zero - that costs alot of energy!).
 
-This issue of noise is the main reason why quantum computers are not commerically viable yet - we cannot achieve the scale needed to achieve quantum advantage over classical computers. 
+Noise is the main reason why quantum computers are not commerically viable yet - we cannot achieve the scale needed to achieve quantum advantage over classical computers.
 
 # Azure Quantum
-Azure Quantum is an ecosystem with a fair few tools in it. The ones relevant to this blog are:
+Azure Quantum is an ecosystem for quantum computing on the Azure platform. It provides a few different tools, but the ones I'll be talking about are:
 
  - Endpoints - An endpoint is a quantum computer you can submit jobs to. There are multiple providers that offer endpoints with computers that utilize different technologies, for example IONQ (trapped ion) and Riggetti (superconducting).
  - Q#/QDK - Q# is a DSL for expressing quantum algorithims. It looks a little like C#. You can write these algorithims and then submit them using the QDK. This QDK enables local support so you can code in an IDE (instead of the built-in notebook server in the Azure Quantum portal) and do things like breakpoint debugging.
