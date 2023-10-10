@@ -17,7 +17,7 @@ comments = true
 - [Introduction](#introduction)
 - [Problems with quantum computing](#problems-with-quantum-computing)
 - [Azure Quantum](#azure-quantum)
-- [Where does Copilot come into things?](#where-does-copilot-come-into-things)
+- [Generating some Q# using Copilot](#generating-some-q-using-copilot)
 - [How are people using Azure Quantum](#how-are-people-using-azure-quantum)
 - [When the tooling outpaces the tech](#when-the-tooling-outpaces-the-tech)
 - [Moving towards scale](#moving-towards-scale)
@@ -41,14 +41,14 @@ This issue of noise is the main reason why quantum computers are not commericall
 # Azure Quantum
 Azure Quantum is an ecosystem with a fair few tools in it. The ones relevant to this blog are:
 
- - Endpoints - are providers that give you an endpoint to submit quantum jobs to. These endpoints are just quantum computers maintained by these providers. Examples includ IONQ (trapped ion) and Riggetti (superconducting).
+ - Endpoints - An endpoint is a quantum computer you can submit jobs to. There are multiple providers that offer endpoints with computers that utilize different technologies, for example IONQ (trapped ion) and Riggetti (superconducting).
  - Q#/QDK - Q# is a DSL for expressing quantum algorithims. It looks a little like C#. You can write these algorithims and then submit them using the QDK. This QDK enables local support so you can code in an IDE (instead of the built-in notebook server in the Azure Quantum portal) and do things like breakpoint debugging.
  - Resource estimation - We lack computers that are commercially viable, but we can still estimate how many qubits/gates (gates are just like classical logic gates but they act on qubits and can do funky things like cause entanglements) it would take to solve a potential problem on a quantum computer. This allows companies to plan for a quantum future, and pick use cases to focus on based on scale required.
 
-# Where does Copilot come into things?
+# Generating some Q# using Copilot
 We've got a development kit that enables us to write Q# code that runs on a quantum computor. The development kit also lets us obtain resource estimates for algorithims using Q# - but this gets ran on classical infrastructure. We can use Copilot to generate Q# code for either use case. 
 
-One of the "hello worlds" of quantum computing algorthims is Grovers Search algorithim, which can achieve quadratic speedup over its classical analogue. Lets ask Copilot to "implement grovers search algorithim in Q#":
+One of the "hello worlds" of quantum computing algorthims is Grovers Search algorithim (for unstructured search, i.e. needle in a haystack), which can achieve quadratic speedup over its classical analogue. Lets ask Copilot to "implement grovers search algorithim in Q#":
 ```c#
 namespace Sample {
     open Microsoft.Quantum.Convert;
@@ -122,21 +122,25 @@ namespace Sample {
     }
 }
 ```
-Thats alot of code. Its also not a terribly useful thing to be asking for - it would be like asking a code generator for an implementation of a bubble sort. You would imagine that these fundamental algorithims would be refactored into some sort of Quantum-STL, or offloaded onto an external library à la LAPACK. Still, interesting to see Copilot in action.
+Thats a big chunk of code for a search. I won't go into it but you can something interesting is the concept of an `operation` which sometimes `is` something. It kind of looks like a trait bound from other languages, and it is similar - we are getting access to some new functions and internal optimizations by declaring our `operation` as being `Adj` or `Ctl`. 
+
+To get a bit mathsy, an `Adj` operation gets access to the `Adjoint` function, which you mary recognize if you've done linear algebra. In quantum mechanics there is a concept of an "operator" (see the similarity to `operation`), which we can represent with a matrix, which we can take the adjoint of - and very often do. So if we have some Q# operation that we represent with the matrix $\bf{A}\$, we get a free implementation of its (Hermitian) adjoint $\bf{A}^\dagger\$ just by declaring the operation as `Adj`. Thats pretty handy considering how often you need to take adjoints in quantum computing, and you can see an example of it doing that in the `ReflectAboutUniform` operation calling the `PrepareUniform` operation.
+
+I will say that this algorithim isn't a hugely useful thing to be asking for - it would be like asking a code generator for an implementation of a bubble sort. You would imagine that these fundamental algorithims would be refactored into some sort of Quantum-STL, or offloaded onto an external library à la LAPACK. Still, interesting to see Copilot in action.
 
 # How are people using Azure Quantum
 Its hard to find examples of industry usage of Azure Quantum but he Microsoft [page](https://azure.microsoft.com/en-gb/products/quantum#tabx86692cc21da843d0a33a02564e68d1cf) page has some examples:
 - Goldman Sachs do a huge amount of derivative trading, and more complex derivatives (i.e. path dependant options) are typically priced using computationally expensive algorithims in the Monte Carlo class. Quantum Monte Carlo is well known, and provides a large speedup over its classical analogue as you scale. Goldman used the resource estimator to obtain a benchmark for qubits and logical operations required for their quantum version of pricing to achieve supremacy over pricing via classical Monte Carlo. [The result](https://quantum-journal.org/papers/q-2021-06-01-463/pdf/) was 8k qubits and a T-Depth (related to number of operations) of 54 million. The best quantum computers currently operate at around 1k qubits, so a ways away.
-- [ENEOS](https://customers.microsoft.com/en-gb/story/1508526643598641548-eneos-energy-azure-quantum) had some super computational heavy chemical analysis they needed to perform. We haven't got a quantum advantage here - but what we can do is run the same small calculation on both a classical and quantum computor and compare. This is what ENEOS did and found that the results matched. This allowed them to verify quantum computers as a potential avenue to alleviate issues with high levels of computational power being expended on analysis.
+- [ENEOS](https://customers.microsoft.com/en-gb/story/1508526643598641548-eneos-energy-azure-quantum) had some computationally heavy chemical analysis they needed to perform. We haven't got a quantum advantage here - but what we can do is run the same small calculation on both a classical and quantum computor and compare. This is what ENEOS did and found that the results matched. This allowed them to verify quantum computers as a potential avenue to alleviate issues with high levels of computational power being expended on analysis.
 
 The key take away for both of these use cases is that they are validating and planning for the future. They are not using Azure Quantum for day to day computation, as the advantage is not there.
 
 # When the tooling outpaces the tech
-We very well could be a long way away from any commercially viable quantum computers. So what do we do in the meantime? We create crazy tooling and wrappers to enable quantum computing, whenever it may come! We have Copilot, something you would think of as only working with mature technologies due to the need for training data. We have various APIs, SDKs, a DSL in Q# and cloud infrastructure (that you can manage through [Bicep!](https://learn.microsoft.com/en-us/azure/quantum/how-to-manage-quantum-workspaces-with-azure-resource-manager?tabs=azure-cli%2Cbicep-template)). These things are all artifacts of a mature ecosystem, and they are being developed now. 
+We very well could be a long way away from any commercially viable quantum computers. So what do we do in the meantime? We create tooling and wrappers to enable quantum computing, whenever it may come! We have Copilot, something you would think of as only working with mature technologies due to the need for training data. We have various APIs, SDKs, a DSL in Q# and cloud infrastructure (that you can manage through [Bicep!](https://learn.microsoft.com/en-us/azure/quantum/how-to-manage-quantum-workspaces-with-azure-resource-manager?tabs=azure-cli%2Cbicep-template)). These things are all artifacts of a mature ecosystem, and they are being developed now for a technology that isn'
 
 You do have to wonder how outdated some of this tooling may be by the time quantum supremacy roles around. Will there be a new quantum computing standard and Q# will need to be reimplemented? (it currently complies to [QIR](https://devblogs.microsoft.com/qsharp/introducing-quantum-intermediate-representation-qir/)). Who can even guess where GenAI will be - maybe coding in general will be reduced to human intervention during PR. Will companies decide they need their own quantum infrastructure? (I admit this one is a reach, but speaking of Goldman Sachs, banks have been known to maintain mainframes near exchanges for latency reasons)
 
-Also - what new tooling will be added? Will we have a QuantumOps (thinking MLOps here) that considers things like performance on different endpoints? Will everyone develop their algorithims as circuits in a UI like the [IBM circuit builder?](https://quantum-computing.ibm.com/composer/files/new). Sometimes you really just need to optimize something to death - will people have little quantum bits of their codebase, kind of like how assembly is used? Will we have interop with classical programming languages via SDKs or bindings? What about a sort of cuda-esque scenario where instead of GPU acceleration we get quantum acceleration? It fun to think about these things.
+Also - what new tooling will be added? Will we have a QuantumOps (thinking MLOps here) that considers things like performance on different endpoints? Will everyone develop their algorithims as circuits in a UI like the [IBM circuit builder?](https://quantum-computing.ibm.com/composer/files/new). Will we have interop with classical programming languages via SDKs or bindings? What about a sort of cuda-esque scenario where instead of GPU acceleration we get quantum acceleration? It fun to think about these things.
 
 # Moving towards scale
 I'm really enjoying seeing the landing pad being laid out for commercial quantum computing. Whether it be the tooling, the resource estimators or just the ability to trial on smaller qubit counts, it will all be valuable as we move toward large scale quantum comptuing.
@@ -151,4 +155,4 @@ Two random closing thoughts:
     q1: ──────X──
     ```
     it got the answer right (entangles the qubits on registers `q0` and `q1`). I thought that was cool.
-- Goldman Sachs being engaged in quantum comptuting for the purpose of derivative pricing is testamant to the size of the derivative market - could you imagine if the first commercial quantum computers were used to do things like calculate the price of an option that is used to speculate on oil prices? It would be a bit of a let down...
+- Goldman Sachs being engaged in quantum comptuting for the purpose of derivative pricing is testamant to the size of the derivative market. Could you imagine if the first commercial quantum computers were used to do things like calculate the price of an option that is used to speculate on oil prices? It would be a bit of a let down...
