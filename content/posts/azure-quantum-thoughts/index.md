@@ -29,10 +29,10 @@ The next announcment was that Microsoft have [managed to](https://blogs.microsof
 
 The final announcment, and the one that caught my eye, is the fact that Copilot has been trained for quantum computing use cases. In particular it is now able to generate Q# code (Q# is Microsoft's high level DSL for writing code to run on quantum hardware) based off a prompt. 
 
-**As a disclaimer, I am sorely lacking in understanding of quantum computing as it is applied to chemistry. If that reflects in this post, apologies.**
+**As a disclaimer, I'm no expert in quantum computing but I did spend a lot of time learning about them and researching them during my degree.**
 
 # Problems with quantum computing
-The overarching issue with quantum computers is mainly one of scale caused by underlying phenomena known as decoherance. You can think of decoherence as noise that causes the qubits that perform your computing to become error-prone, and ultimately useless if exposed for too long without correction. Qubits are very sensitive to this noise which makes very hard to scale the number of qubits in your computer due to issues like cross talk and operational fidelity (whenever I perform an operation on a qubit, I introduce noise - we have more to worry about than just environmental noise!).
+The overarching issue with quantum computers is mainly one of scale caused by an underlying phenomena known as decoherance. You can think of decoherence as noise that causes the qubits that perform your computing to become error-prone, and ultimately useless if exposed for too long without correction. Qubits are very sensitive to this noise which makes hard to scale the number of qubits in your computer due to issues like cross talk and operational fidelity (whenever I perform an operation on a qubit, I introduce noise - we have more to worry about than just environmental noise!).
 
 The main avenue to combating decoherence is through novel materials such as superconductors which have intrinsic properties which protect states (qubits) encoded within them. The topological qubit which Microsoft just generated is another example of an qubit generated in such a way that it has protection against noise. These materials are on the bleeding edge of modern physics and as such are very expensive to produce and hard to maintain (superconductor based quantum computers operate near absolute zero - that costs alot of energy!).
 
