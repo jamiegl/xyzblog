@@ -155,4 +155,4 @@ Two random closing thoughts:
     q1: ──────X──
     ```
     it got the answer right (entangles the qubits on registers `q0` and `q1`). I thought that was cool.
-- Goldman Sachs being engaged in quantum comptuting for the purpose of derivative pricing is testamant to the size of the derivative market. Could you imagine if the first commercial quantum computers were used to do things like calculate the price of an option that is used to speculate on oil prices? It would be a bit of a let down...
+- Goldman Sachs being engaged in quantum comptuting for the purpose of derivative pricing is testamant to the size of the derivative market. Could you imagine if the first commercial quantum computers were used to do things like calculate the price of an option that is used to speculate on oil prices? Probably not what people were expecting!
