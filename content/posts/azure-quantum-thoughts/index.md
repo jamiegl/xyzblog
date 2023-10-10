@@ -145,7 +145,7 @@ Also - what new tooling will be added? Will we have a QuantumOps (thinking MLOps
 # Moving towards scale
 I'm really enjoying seeing the landing pad being laid out for commercial quantum computing. Whether it be the tooling, the resource estimators or just the ability to trial on smaller qubit counts, it will all be valuable as we move toward large scale quantum comptuing.
 
-Whilst the tech is not as mature as the tooling, I don't argue that having these features at hand can aid people using these platforms for discovery and planning for a quantum world.
+Whilst the technology is not as mature as the tooling, having these features at hand can aid people using these platforms for discovery, research and preperation for a quantum world.
 
 Two random closing thoughts:
 - I asked Copilot to tell me what this circuit does (i literally copy pasted the text below):
