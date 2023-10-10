@@ -195,7 +195,7 @@ google = "<your_gtag>"
 
 # To add disqus comments
 [extra.commenting]
-disqus = "jamieoreilly"
+disqus = "<your_disqus_shortname>"
 
 # To enable mapbox maps
 [extra.mapbox]
