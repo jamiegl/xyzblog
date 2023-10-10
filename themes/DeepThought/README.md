@@ -46,16 +46,16 @@
 <!-- Table of Contents -->
 # :notebook_with_decorative_cover: Table of Contents
 
-- [:notebook_with_decorative_cover: Table of Contents](#notebook_with_decorative_cover-table-of-contents)
+- [:notebook\_with\_decorative\_cover: Table of Contents](#notebook_with_decorative_cover-table-of-contents)
   - [:star2: About the Project](#star2-about-the-project)
     - [:camera: Screenshots](#camera-screenshots)
-    - [:space_invader: Tech Stack](#space_invader-tech-stack)
+    - [:space\_invader: Tech Stack](#space_invader-tech-stack)
     - [:dart: Features](#dart-features)
   - [:toolbox: Getting Started](#toolbox-getting-started)
     - [:bangbang: Prerequisites](#bangbang-prerequisites)
     - [:gear: Installation](#gear-installation)
     - [:running: Run Locally](#running-run-locally)
-    - [:triangular_flag_on_post: Deployment](#triangular_flag_on_post-deployment)
+    - [:triangular\_flag\_on\_post: Deployment](#triangular_flag_on_post-deployment)
   - [:eyes: Usage](#eyes-usage)
       - [Multilingual Navbar](#multilingual-navbar)
     - [KaTeX math formula support](#katex-math-formula-support)
