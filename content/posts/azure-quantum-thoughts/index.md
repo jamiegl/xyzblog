@@ -136,7 +136,7 @@ Its hard to find examples of industry usage of Azure Quantum but he Microsoft [p
 The key take away for both of these use cases is that they are validating and planning for the future. They are not using Azure Quantum for day to day computation, as the advantage is not there.
 
 # When the tooling outpaces the tech
-We very well could be a long way away from any commercially viable quantum computers. So what do we do in the meantime? We create tooling and wrappers to enable quantum computing, whenever it may come! We have Copilot, something you would think of as only working with mature technologies due to the need for training data. We have various APIs, SDKs, a DSL in Q# and cloud infrastructure (that you can manage through [Bicep!](https://learn.microsoft.com/en-us/azure/quantum/how-to-manage-quantum-workspaces-with-azure-resource-manager?tabs=azure-cli%2Cbicep-template)). These things are all artifacts of a mature ecosystem, and they are being developed now for a technology that isn'
+We could be a long way away commercially viable quantum computer, so its super interesting to see the development of tooling that will facilitate quantum computing, whenever it may come. We have Copilot, something you would think of as only working with mature technologies due to the need for training data. We have various APIs, SDKs, a DSL in Q# and cloud infrastructure (that you can manage through [Bicep!](https://learn.microsoft.com/en-us/azure/quantum/how-to-manage-quantum-workspaces-with-azure-resource-manager?tabs=azure-cli%2Cbicep-template)). These things are all artifacts of a mature ecosystem, and they are being developed now for a technology that isn't actually being used outside of research.
 
 You do have to wonder how outdated some of this tooling may be by the time quantum supremacy roles around. Will there be a new quantum computing standard and Q# will need to be reimplemented? (it currently complies to [QIR](https://devblogs.microsoft.com/qsharp/introducing-quantum-intermediate-representation-qir/)). Who can even guess where GenAI will be - maybe coding in general will be reduced to human intervention during PR. Will companies decide they need their own quantum infrastructure? (I admit this one is a reach, but speaking of Goldman Sachs, banks have been known to maintain mainframes near exchanges for latency reasons)
 
@@ -145,7 +145,7 @@ Also - what new tooling will be added? Will we have a QuantumOps (thinking MLOps
 # Moving towards scale
 I'm really enjoying seeing the landing pad being laid out for commercial quantum computing. Whether it be the tooling, the resource estimators or just the ability to trial on smaller qubit counts, it will all be valuable as we move toward large scale quantum comptuing.
 
-Whilst the tech is not as mature as the tooling, I don't argue that having these features at hand can aid people using these platforms for discovery and planning for a quantum world.
+Whilst the technology is not as mature as the tooling, having these features at hand can aid people using these platforms for discovery, research and preperation for a quantum world.
 
 Two random closing thoughts:
 - I asked Copilot to tell me what this circuit does (i literally copy pasted the text below):
