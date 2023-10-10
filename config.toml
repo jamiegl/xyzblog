@@ -217,7 +217,7 @@ email = "jamie.oreillygall@gmail.com"
 # google = "UA-176984489-2"
 
 [extra.commenting]
-disqus = "jamieoreillyg"
+disqus = "jamieoreilly"
 
 [extra.mapbox]
 enabled = false
