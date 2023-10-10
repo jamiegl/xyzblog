@@ -46,7 +46,7 @@ Azure Quantum is an ecosystem for quantum computing on the Azure platform. It pr
  - Resource estimation - We lack quantum computers that are commercially viable, but we can still estimate how many qubits/gates (gates are just like classical logic gates but they act on qubits and can do funky things like cause entanglements) it would take to solve a potential problem on a quantum computer. This allows companies to plan for a quantum future, and pick use cases to focus on based on scale required.
 
 # Generating some Q# using Copilot
-We've got a development kit that enables us to write Q# code that runs on a quantum computor. The development kit also lets us obtain resource estimates for algorithims using Q# - but this gets ran on classical infrastructure. We can use Copilot to generate Q# code for either use case. 
+We've got a development kit that enables us to write Q# code that runs on a quantum hardware. The development kit also lets us obtain resource estimates for algorithims using Q# - but this gets ran on classical infrastructure. We can use Copilot to generate Q# code for either use case. 
 
 One of the "hello worlds" of quantum computing algorthims is Grovers Search algorithim (for unstructured search, i.e. needle in a haystack), which can achieve quadratic speedup over its classical analogue. Lets ask Copilot to "implement grovers search algorithim in Q#":
 ```c#
