@@ -1,6 +1,6 @@
 +++
 title = "Azure Quantum - We've got Copilot now!"
-description = "Where do you reckon GenAI will by the time we have viable quantum computers?"
+description = "When the tooling outpaces the tech - the non-quantum bits of Azure Quantum."
 date = 2023-10-10
 updated = 2023-10-10
 draft = false
