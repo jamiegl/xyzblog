@@ -1,6 +1,6 @@
 +++
 title = "Azure Quantum - We've got Copilot now!"
-description = "When the tooling outpaces the tech - the non-quantum bits of Azure Quantum."
+description = "A brief dive into Azure Quantum and some of its tooling, especially the new Copilot integration."
 date = 2023-10-10
 updated = 2023-10-10
 draft = false
@@ -32,7 +32,7 @@ The final announcment, and the one that caught my eye, is the fact that Copilot 
 **As a disclaimer, I'm no expert in quantum computing but I did spend a lot of time learning about them and researching them during my degree.**
 
 # Problems with quantum computing
-The overarching issue with quantum computers is mainly one of scale caused by an underlying phenomena known as decoherance. You can think of decoherence as noise that causes the qubits that perform your computing to become error-prone, and ultimately useless if exposed for too long without correction. Qubits are very sensitive to this noise which makes it hard to scale the number of qubits in your computer as you run into issues like cross talk and operational fidelity (whenever I perform an operation on a qubit, I introduce noise - we have more to worry about than just environmental noise!).
+The overarching issue with quantum computers is mainly one of scale caused by an underlying phenomena known as decoherance. You can think of decoherence as noise that causes the qubits that perform your computing to become error-prone, and ultimately useless if exposed for too long without correction. Qubits are very sensitive to this noise which makes it hard to scale the number of qubits in your computer as you run into issues like cross talk and operational fidelity (whenever I perform an operation on a qubit, I introduce noise to that qubit - we have more to worry about than just environmental noise).
 
 The main avenue to combating decoherence is through novel materials such as superconductors which have intrinsic properties which protect states (qubits) encoded within them. The topological qubit which Microsoft just generated is another example of an qubit generated in such a way that it has protection against noise. These materials are on the bleeding edge of modern physics and as such are very expensive to produce and hard to maintain (superconductor based quantum computers operate near absolute zero - that costs alot of energy!).
 
@@ -43,7 +43,7 @@ Azure Quantum is an ecosystem for quantum computing on the Azure platform. It pr
 
  - Endpoints - An endpoint is a quantum computer you can submit jobs to. There are multiple providers that offer endpoints with computers that utilize different technologies, for example IONQ (trapped ion) and Riggetti (superconducting).
  - Q#/QDK - Q# is a DSL for expressing quantum algorithims. It looks a little like C#. You can write these algorithims and then submit them using the QDK (Quantum Development Kit). The QDK enables local support so you can code in an IDE (instead of the built-in notebook server in the Azure Quantum portal) and do things like breakpoint debugging.
- - Resource estimation - We lack quantum computers that are commercially viable, but we can still estimate how many qubits/gates (gates are just like classical logic gates but they act on qubits and can do funky things like cause entanglements) it would take to solve a potential problem on a quantum computer. This allows companies to plan for a quantum future, and pick use cases to focus on based on scale required.
+ - Resource estimation - We lack quantum computers that are commercially viable, but we can still estimate how many qubits/gates (gates are just like classical logic gates but they act on qubits and can do things like cause entanglements) it would take to solve a potential problem on a quantum computer. This allows companies to plan for a quantum future, and pick use cases to focus on based on scale required.
 
 # Generating some Q# using Copilot
 We've got a development kit that enables us to write Q# code that runs on a quantum hardware. The development kit also lets us obtain resource estimates for algorithims using Q# - but this gets ran on classical infrastructure. We can use Copilot to generate Q# code for either use case. 
