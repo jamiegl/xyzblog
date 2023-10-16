@@ -11,16 +11,8 @@ tags = ["Azure","Quantum Comptuting"]
 math = true
 math_auto_render = true
 comments = true
+toc = true
 +++
-
-## Contents
-- [Introduction](#introduction)
-- [Problems with quantum computing](#problems-with-quantum-computing)
-- [Azure Quantum](#azure-quantum)
-- [Generating some Q# using Copilot](#generating-some-q-using-copilot)
-- [How are people using Azure Quantum](#how-are-people-using-azure-quantum)
-- [When the tooling outpaces the tech](#when-the-tooling-outpaces-the-tech)
-- [Moving towards scale](#moving-towards-scale)
 
 # Introduction
 A few months ago Microsoft came out with some [super interesting announcments](https://blogs.microsoft.com/blog/2023/06/21/accelerating-scientific-discovery-with-azure-quantum/) regarding their Azure Quantum product. The first, Azure Quantum Elements is a suite of tools targeting computational chemistry applications. Computational chemistry is an obvious area to innovate in due to the intrinsic links between quantum phenomena and the modelling of novel chemicals and materials.
