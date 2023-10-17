@@ -135,7 +135,7 @@ You do have to wonder how outdated some of this tooling may be by the time quant
 Also - what new tooling will be added? Will we have a QuantumOps (thinking MLOps here) that considers things like performance on different endpoints? Will everyone develop their algorithims as circuits in a UI like the [IBM circuit builder?](https://quantum-computing.ibm.com/composer/files/new). Will we have interop with classical programming languages via SDKs or bindings? What about a sort of cuda-esque scenario where instead of GPU acceleration we get quantum acceleration?
 
 # Moving towards scale
-I'm really enjoying seeing the landing pad being laid out for commercial quantum computing. Whether it be the tooling, the resource estimators or just the ability to trial on smaller qubit counts, it will all be valuable as we move toward large scale quantum comptuing.
+I'm really enjoying seeing the landing pad being laid out for commercial quantum computing. Whether it be the faciliation via DSLs and runtimes or the preperation via the resource estimators and small scale trials, it will all be valuable as we move toward large scale quantum comptuing.
 
 Whilst the technology is not as mature as the tooling, having these features at hand can aid people using these platforms for discovery, research and preperation for a quantum world.
 
