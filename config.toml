@@ -74,7 +74,7 @@ extra_syntaxes = []
 
 # The theme to use for code highlighting.
 # See below for list of allowed values.
-highlight_theme = "one-dark"
+highlight_theme = "monokai"
 
 # When set to "true", emoji aliases translated to their corresponding
 # Unicode emoji equivalent in the rendered Markdown files. (e.g.: :smile: => 😄)
