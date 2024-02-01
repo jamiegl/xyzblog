@@ -1,6 +1,6 @@
 +++
-title = "Azure Quantum - lets chat about tooling (we've got Copilot now?)"
-description = "A brief dive into Azure Quantum and some of its tooling, including the new Copilot integration."
+title = "Taking a look at Azure Quantum and some of its tooling"
+description =  "Checking out Azure Quantum and some of its tooling, including the new Copilot integration."
 date = 2023-10-17
 updated = 2023-10-17
 draft = false
@@ -20,8 +20,6 @@ A few months ago Microsoft came out with some [interesting announcments](https:/
 The next announcment was that Microsoft have [managed to generate topological qubits](https://blogs.microsoft.com/blog/2023/06/21/accelerating-scientific-discovery-with-azure-quantum/), exotic quasi-particles with characteristics that make them inherently noise-tolerant. This is exciting as the idea of a topological quantum computer has been around since 1997. It is still early days for the technology and topological qubits are not a part of any quantum computers offered by vendors.
 
 The final announcment, and the one that caught my eye, is the fact that Copilot has been trained for quantum computing use cases. In particular it is now able to generate Q# code (Q# is Microsoft's high level DSL for writing code to run on quantum hardware) based off a prompt. 
-
-**As a disclaimer, I'm no expert in quantum computing but I did spend a lot of time learning about them and researching them during my degree.**
 
 # Problems with quantum computing
 The overarching issue with quantum computers is mainly one of scale caused by an underlying phenomena known as decoherance. You can think of decoherence as noise that causes the qubits that perform your computing to become error-prone, and ultimately useless if exposed for too long without correction. Qubits are very sensitive to this noise which makes it hard to scale the number of qubits in your computer as you run into issues like cross talk and operational fidelity (whenever I perform an operation on a qubit, I introduce noise to that qubit - we have more to worry about than just environmental noise).
@@ -114,7 +112,7 @@ namespace Sample {
     }
 }
 ```
-Thats a big chunk of code for a search. I won't go into how it works but something interesting is the concept of an `operation` which sometimes `is` something. It kind of looks like a trait bound from other languages, and it is similar - we are getting access to some new functions and internal optimizations by declaring our `operation` as being `Adj` or `Ctl`. 
+Thats a big chunk of code for a search. I won't go into how it works but something interesting is the concept of an `operation` which sometimes `is` something (which looks like inheritance or trait bounding).
 
 An `Adj` operation gets access to the `Adjoint` function, which you may recognize if you've done linear algebra. In quantum mechanics there is a concept of an [operator](https://en.wikipedia.org/wiki/Operator_(physics)#Operators_in_quantum_mechanics) (see the similarity to `operation`), which we can represent with a matrix, which we can take the adjoint of - and very often do. So if we have some Q# operation that we represent with the matrix $\bf{A}\$, we get a free implementation of its (Hermitian) adjoint $\bf{A}^\dagger\$ just by declaring the operation as `Adj`. Thats pretty handy considering how often you need to take adjoints in quantum computing, and you can see an example of it doing that in the `ReflectAboutUniform` operation calling the `PrepareUniform` operation. You can read more about all this [here](https://learn.microsoft.com/en-us/azure/quantum/user-guide/language/expressions/functorapplication).
 
